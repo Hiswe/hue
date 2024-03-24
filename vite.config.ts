@@ -7,6 +7,8 @@ import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 import { VueRouterAutoImports } from 'unplugin-vue-router';
 import Unocss from 'unocss/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,7 +18,15 @@ export default defineConfig({
     // https://www.npmjs.com/package/@vitejs/plugin-vue
     vue(),
     // https://github.com/antfu/unplugin-vue-components
-    Components(),
+    Components({
+      // https://github.com/unplugin/unplugin-icons?tab=readme-ov-file#auto-importing
+      resolvers: [
+        IconsResolver({
+          prefix: false,
+          enabledCollections: [`iconoir`],
+        }),
+      ],
+    }),
     // https://github.com/unplugin/unplugin-auto-import
     AutoImport({
       imports: [
@@ -27,6 +37,8 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss(),
+    // https://github.com/unplugin/unplugin-icons?tab=readme-ov-file
+    Icons(),
   ],
   resolve: {
     alias: {

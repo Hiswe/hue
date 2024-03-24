@@ -63,8 +63,11 @@
   "packmind.feature.disableSuggestion": true,
   "editor.tabSize": 2,
   "cSpell.words": [
+    "composables",
+    "Iconoir",
     "Unocss",
     "unplugin",
     "Vuetify"
-  ]
+  ],
+  "editor.detectIndentation": false
 }

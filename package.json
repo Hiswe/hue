@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.9.0",
+    "@iconify-json/iconoir": "^1.1.42",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/tsconfig": "^0.5.1",
     "bun-types": "^1.0.35",
@@ -28,6 +29,7 @@
     "typescript": "^5.4.3",
     "unocss": "^0.58.6",
     "unplugin-auto-import": "^0.17.5",
+    "unplugin-icons": "^0.18.5",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-router": "^0.8.5",
     "vite": "^5.2.5",

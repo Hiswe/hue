@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     HSwitch: typeof import('./src/components/HSwitch.vue')['default']
     HTextInput: typeof import('./src/components/HTextInput.vue')['default']
+    IconoirTrash: typeof import('~icons/iconoir/trash')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

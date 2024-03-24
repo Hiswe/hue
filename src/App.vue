@@ -10,8 +10,21 @@ const toggleBackground = ref(false);
         label="Background grid"
       />
     </header>
-    <div class="p-8">
-      <RouterView />
+    <div class="grid grid-cols-[250px_1fr]">
+      <nav class="flex flex-col">
+        <RouterLink class="px-4 py-2" to="/">
+          Home
+        </RouterLink>
+        <RouterLink class="px-4 py-2" to="/inputs">
+          inputs
+        </RouterLink>
+        <RouterLink class="px-4 py-2" to="/btn">
+          buttons
+        </RouterLink>
+      </nav>
+      <div class="p-8">
+        <RouterView />
+      </div>
     </div>
   </main>
 </template>

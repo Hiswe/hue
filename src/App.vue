@@ -21,6 +21,9 @@ const toggleBackground = ref(false);
         <RouterLink class="px-4 py-2" to="/btn">
           buttons
         </RouterLink>
+        <RouterLink class="px-4 py-2" to="/spinner">
+          spinner
+        </RouterLink>
       </nav>
       <div class="p-8">
         <RouterView />

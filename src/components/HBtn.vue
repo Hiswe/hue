@@ -11,16 +11,22 @@ const props = withDefaults(
     tag?: string
     href?: string
     to?: RouteLocationRaw
-    block?: boolean
     disabled?: boolean
     loading?: boolean
     icon?: boolean
-    variant?: `flat` | `outlined`
+    variant?: `flat` | `text` | `outlined`
+    size?: `x-small` | `small` | `default`
+    text?: string
   }>(),
   {
-    variant: `flat`,
+    variant: `outlined`,
+    size: `default`,
   },
 );
+
+const emit = defineEmits<{
+  click: []
+}>();
 
 defineSlots<{
   default: () => any
@@ -32,37 +38,54 @@ const linkComponent = computed(() => {
   return props.to ? RouterLink : props.href ? `a` : `button`;
 });
 
-const isFlat = computed(() => props.variant === `flat`);
-const isOutlined = computed(() => !isFlat.value);
+const classes = computed(() => {
+  const _classes: Array<string> = [];
 
-// NOTE: about icons
-// • `first-child` will ignore text-nodes π__π
-// • `pseudo-elements` are ignored for selector π__π
-// ⇒ just handle icon before
-// We could support reverse by
-// • using 'flex-row-reverse' class
-// • a `trailing` props
-//   https://ui.nuxt.com/components/button#icon
+  // Color
+  if (props.loading) _classes.push(`text-transparent`);
+  else if (props.disabled) _classes.push(`text-neutral-500`);
+  else if (props.variant === `flat`) _classes.push(`text-white`);
+  else _classes.push(`text-indigo-500`);
+
+  // Background & borders
+  if (props.disabled || props.loading) {
+    _classes.push(` border-neutral-300`);
+    if (props.variant === `flat`) _classes.push(` bg-neutral-300`);
+  }
+  else if (props.variant === `text`) {
+    _classes.push(` bg-transparent`);
+  }
+  else {
+    _classes.push(`!active:bg-pink`, `active:border-pink`, `!active:text-white`, `border-indigo-500`, `hover:decoration-underline`);
+    if (props.variant === `flat`) _classes.push(`bg-indigo-500`);
+  };
+  if (props.icon) _classes.push(`bg-white`); // additional white background is mandatory for icon buttons
+
+  // Size
+  if (!props.icon) _classes.push(`px-6`, `text-sm`, `h-10`);
+  else if (props.size === `x-small`) _classes.push(`size-6`);
+  else if (props.size === `small`) _classes.push(`size-8`);
+  else _classes.push(`size-10`);
+
+  return _classes;
+});
 </script>
 
 <template>
   <component
     :is="linkComponent"
-    class="rounded-full whitespace-nowrap h-10 items-center justify-center gap-2
-      [&_svg]:text-lg"
-    :class="{
-      'inline-flex': !block,
-      'flex': block,
-      'w-10': icon,
-      'ps-4 pe-4 has-[svg]:ps-2': !icon,
-      'bg-indigo-500 text-white': isFlat && !disabled,
-      'border-solid border-2': isOutlined,
-      'border-indigo-500 text-indigo-500': isOutlined && !disabled,
-      'active:bg-pink active:text-white active:border-pink': !disabled,
-      'text-slate-400 border-slate-100': disabled,
-      'bg-slate-100': isFlat && disabled,
-    }"
+    class="font-semibold decoration-none text-nowrap rounded-full inline-grid place-items-center border-solid border-2"
+    :class="classes"
+    @click="emit(`click`)"
   >
-    <slot />
+    <span
+      class="col-start-1 row-start-1 opacity-0 last:opacity-100 inline-flex items-center justify-center gap-1"
+      :class="{ 'has-[svg]:-m-s-4': !icon }"
+    >
+      <slot>
+        {{ text }}
+      </slot>
+    </span>
+    <HSpinner v-if="loading" class="row-start-1 col-start-1" />
   </component>
 </template>

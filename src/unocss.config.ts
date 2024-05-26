@@ -2,7 +2,6 @@ import {
   defineConfig,
   presetWind,
   transformerDirectives,
-  transformerVariantGroup,
 } from 'unocss';
 
 // relative import is mandatory since it used in vite-config where alias are defined
@@ -16,7 +15,6 @@ export default defineConfig({
   ],
   transformers: [
     transformerDirectives(),
-    transformerVariantGroup(),
   ],
   content: {
     pipeline: {

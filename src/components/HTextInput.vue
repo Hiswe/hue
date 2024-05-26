@@ -15,24 +15,42 @@ const modelValue = defineModel<string>();
 </script>
 
 <template>
-  <label
-    class="h-text-input
-      grid rounded
-      before:content-['']
-      after:content-['']
-    "
-  >
-    <input
-      v-model="modelValue"
-      type="text"
-      :placeholder="placeholder"
-    >
-    <div class="h-text-input__notch">
-      <span>
-        {{ label }}
-      </span>
+  <div>
+    <div>
+      <!-- TODO: slot before -->
+      <label
+        class="h-text-input
+          group/input
+          grid rounded
+          before:content-[''] before:pointer-events-none before:rounded-s-lg before:col-start-1 before:row-start-1
+          before:border  before:border-black !before:border-e-0 has-[:focus-within]:before:border-2 has-[:focus-within]:before:border-indigo-500
+          after:content-[''] after:pointer-events-none after:rounded-e-lg after:col-start-3 after:row-start-1
+          after:border  after:border-black !after:border-s-0 has-[:focus-within]:after:border-2 has-[:focus-within]:after:border-indigo-500
+        "
+      >
+        <!-- TODO: slot inner before -->
+        <input
+          v-model="modelValue"
+          class="outline-none bg-yellow-50 row-start-1"
+          type="text"
+          :placeholder="placeholder"
+        >
+        <!-- TODO: slot inner after -->
+        <p
+          class="
+            h-text-input__notch whitespace-nowrap pointer-events-none col-start-2 row-start-1
+            border-solid border-black group-has-[:focus-within]/input:border-indigo-500
+          "
+        >
+          <span class="block group-has-[:focus-within]/input:text-indigo-500">
+            {{ label }}
+          </span>
+        </p>
+      </label>
+    <!-- TODO: slot after -->
     </div>
-  </label>
+    <!-- TODO: text under -->
+  </div>
 </template>
 
 <style scoped>
@@ -56,9 +74,7 @@ For select we could with:
 */
 
 .h-text-input {
-  --border-color: black;
   --border-width: 1px;
-  --radius: 0.5rem;
   --spacing-inline: 1.25rem;
   --spacing-block: 1rem;
   --spacing-label-border: 3px;
@@ -69,44 +85,23 @@ For select we could with:
 }
 
 .h-text-input:focus-within {
-  --border-color: blue;
   --border-width: 2px;
 }
 
 .h-text-input::before,
-.h-text-input::after,
-.h-text-input__notch {
-  border: 0 solid var(--border-color);
-  border-style: solid;
-  border-block-width: var(--border-width);
-  padding-block: var(--spacing-block);
-  grid-row: 1;
-  pointer-events: none;
+.h-text-input::after {
   transition: border-color .3s;
 }
-
-/*
-  Beginning & end of border
-*/
-
-.h-text-input::before {
-  border-inline-start-width: var(--border-width);
-  border-radius: var(--radius) 0 0 var(--radius);
-  grid-column: 1;
-}
-
-.h-text-input::after {
-  border-inline-end-width: var(--border-width);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  grid-column: 3;
+.h-text-input__notch {
+  border-width: var(--border-width) 0;
+  padding-block: var(--spacing-block);
+  transition: border-color .3s;
 }
 
 /*
   The notch will handle the borders
 */
 .h-text-input__notch {
-  white-space: nowrap;
-  grid-column: 2;
   padding-inline-start: var(--spacing-label-border);
   padding-inline-end: var(--spacing-label-border);
 }
@@ -114,8 +109,6 @@ For select we could with:
 .h-text-input__notch span {
   transition: all 0.3s;
   font-size: 1rem;
-  display: block;
-  color: var(--border-color);
   translate: 0 0;
 }
 
@@ -138,12 +131,9 @@ input:not(:placeholder-shown) + .h-text-input__notch span {
 }
 
 .h-text-input input {
-  grid-row: 1;
   grid-column: 2 / span 2;
-  background: none;
   border: solid transparent;
   border-width: 2px 0;
-  outline: none;
   padding-block: var(--spacing-block);
   padding-inline-start: var(--spacing-label-border);
   padding-inline-end: var(--spacing-label-border);

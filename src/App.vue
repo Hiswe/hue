@@ -27,6 +27,9 @@ const toggleBackground = ref(false);
         <RouterLink class="px-4 py-2" to="/chips">
           chips
         </RouterLink>
+        <RouterLink class="px-4 py-2" to="/menu">
+          menu
+        </RouterLink>
       </nav>
       <div class="p-8">
         <RouterView />

@@ -10,6 +10,7 @@ declare module 'vue' {
     HBtn: typeof import('./src/components/HBtn.vue')['default']
     HChip: typeof import('./src/components/HChip.vue')['default']
     HChipGroup: typeof import('./src/components/HChipGroup.vue')['default']
+    HDialog: typeof import('./src/components/HDialog.vue')['default']
     HMenu: typeof import('./src/components/HMenu.vue')['default']
     HRadio: typeof import('./src/components/HRadio.vue')['default']
     HRadioGroup: typeof import('./src/components/HRadioGroup.vue')['default']

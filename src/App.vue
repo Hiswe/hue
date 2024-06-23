@@ -24,6 +24,9 @@ const toggleBackground = ref(false);
         <RouterLink class="px-4 py-2" to="/dialog">
           dialog
         </RouterLink>
+        <RouterLink class="px-4 py-2" to="/drawer">
+          drawer
+        </RouterLink>
         <RouterLink class="px-4 py-2" to="/inputs">
           inputs
         </RouterLink>

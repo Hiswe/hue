@@ -19,7 +19,10 @@ const toggleBackground = ref(false);
           buttons
         </RouterLink>
         <RouterLink class="px-4 py-2" to="/chips">
-          chips
+          chips & radios
+        </RouterLink>
+        <RouterLink class="px-4 py-2" to="/dialog">
+          dialog
         </RouterLink>
         <RouterLink class="px-4 py-2" to="/inputs">
           inputs

@@ -44,7 +44,7 @@ const popoverStyle = computed(() => {
     <div
       :id="popovertarget"
       popover
-      class="border rounded absolute -translate-x-1/2 m-0 mt-1 p-3 top-[anchor(bottom)] left-[anchor(center)]"
+      class="border rounded absolute m-0 mt-1 p-3 top-[anchor(bottom)] left-[anchor(center)] shadow-md"
       :style="popoverStyle"
     >
       <slot />
@@ -69,8 +69,8 @@ const popoverStyle = computed(() => {
 }
 
 [popover] {
-  /* inset-area: span-x-start bottom; */
-  /* position-try-options: flip-block; */
+  position-try-options: flip-block;
+  inset-area: block-end;
 
   transition-property: opacity, overlay, display;
   transition-duration: 0.3s;

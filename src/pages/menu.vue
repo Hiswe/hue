@@ -2,7 +2,7 @@
   <div>
     <h1>Menu</h1>
     <HMenu popovertarget="menu">
-      <div>
+      <div class="whitespace-nowrap">
         <h1>Menu</h1>
         <p>Menu content</p>
       </div>
@@ -10,9 +10,11 @@
     <div class="h-svh" />
     <h2>Another menu</h2>
     <HMenu popovertarget="another-menu">
-      <div>
+      <div class="whitespace-nowrap">
         <h1>Menu</h1>
-        <p>Menu content</p>
+        <p>
+          Menu content
+        </p>
       </div>
     </HMenu>
   </div>

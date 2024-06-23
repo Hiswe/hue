@@ -48,12 +48,10 @@ const classes = computed(() => {
   else _classes.push(`text-indigo-500`);
 
   // Background & borders
+  if (props.variant === `text`) _classes.push(` bg-transparent border-transparent`);
   if (props.disabled || props.loading) {
-    _classes.push(` border-neutral-300`);
+    if (props.variant !== `text`) _classes.push(` border-neutral-300`);
     if (props.variant === `flat`) _classes.push(` bg-neutral-300`);
-  }
-  else if (props.variant === `text`) {
-    _classes.push(` bg-transparent`);
   }
   else {
     _classes.push(`!active:bg-pink`, `active:border-pink`, `!active:text-white`, `border-indigo-500`, `hover:decoration-underline`);

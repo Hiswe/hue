@@ -16,6 +16,7 @@ declare module 'vue' {
     HSpinner: typeof import('./src/components/HSpinner.vue')['default']
     HSwitch: typeof import('./src/components/HSwitch.vue')['default']
     HTextInput: typeof import('./src/components/HTextInput.vue')['default']
+    IconoirArrowRight: typeof import('~icons/iconoir/arrow-right')['default']
     IconoirCheck: typeof import('~icons/iconoir/check')['default']
     IconoirCheckCircleSolid: typeof import('~icons/iconoir/check-circle-solid')['default']
     IconoirCircle: typeof import('~icons/iconoir/circle')['default']

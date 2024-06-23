@@ -2,7 +2,7 @@
   <div>
     <h1>Buttons</h1>
     <div class="flex flex-col gap-4">
-      <div class="grid grid-cols-5 gap-2 justify-items-center">
+      <div class="grid grid-cols-6 gap-2 justify-items-center">
         <HBtn>
           My label
         </HBtn>
@@ -18,25 +18,51 @@
         <HBtn>
           <IconoirTrash /> My label
         </HBtn>
+        <HBtn dir="rtl">
+          <IconoirArrowRight /> My label
+        </HBtn>
       </div>
-      <div class="grid grid-cols-5 gap-2  justify-items-center">
-        <HBtn variant="outlined">
+      <div class="grid grid-cols-6 gap-2  justify-items-center">
+        <HBtn variant="flat">
           My label
         </HBtn>
-        <HBtn disabled variant="outlined">
+        <HBtn disabled variant="flat">
           My label
         </HBtn>
-        <HBtn loading variant="outlined">
+        <HBtn loading variant="flat">
           My label
         </HBtn>
-        <HBtn disabled loading variant="outlined">
+        <HBtn disabled loading variant="flat">
           My label
         </HBtn>
-        <HBtn variant="outlined">
+        <HBtn variant="flat">
           <IconoirTrash /> My label
         </HBtn>
+        <HBtn variant="flat" dir="rtl">
+          <IconoirArrowRight /> My label
+        </HBtn>
       </div>
-      <div class="grid grid-cols-5 gap-2  justify-items-center">
+      <div class="grid grid-cols-6 gap-2  justify-items-center">
+        <HBtn variant="text">
+          My label
+        </HBtn>
+        <HBtn disabled variant="text">
+          My label
+        </HBtn>
+        <HBtn loading variant="text">
+          My label
+        </HBtn>
+        <HBtn disabled loading variant="text">
+          My label
+        </HBtn>
+        <HBtn variant="text">
+          <IconoirTrash /> My label
+        </HBtn>
+        <HBtn variant="text" dir="rtl">
+          <IconoirArrowRight /> My label
+        </HBtn>
+      </div>
+      <div class="grid grid-cols-6 gap-2  justify-items-center">
         <HBtn icon>
           <IconoirTrash />
         </HBtn>

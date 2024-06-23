@@ -25,9 +25,15 @@ watch(open, (isOpen) => {
 
 <style scoped>
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior */
+dialog {
+  transition-property: opacity, overlay, display;
+  transition-duration: 0.3s;
+  transition-behavior: allow-discrete;
+}
 dialog[open] {
   opacity: 1;
 }
+
 /*
   Browser support isn't that good (june 2024)
   => remove transition when not supported
@@ -37,12 +43,6 @@ dialog[open] {
   dialog {
     opacity: 0;
   }
-}
-
-dialog {
-  transition-property: opacity, overlay, display;
-  transition-duration: 0.3s;
-  transition-behavior: allow-discrete;
 }
 
 /* Needs to be included after the previous dialog[open]

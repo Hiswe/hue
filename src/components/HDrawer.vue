@@ -34,6 +34,12 @@ function onClick(event: Event) {
 
 <style scoped>
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior */
+dialog,
+dialog::backdrop{
+  transition-property: opacity, transform, overlay, display;
+  transition-duration: 0.3s;
+  transition-behavior: allow-discrete;
+}
 dialog[open]  {
   opacity: 1;
   transform: translateX(0);
@@ -54,13 +60,6 @@ dialog[open]::backdrop {
   dialog::backdrop {
     opacity: 0;
   }
-}
-
-dialog,
-dialog::backdrop{
-  transition-property: opacity, transform, overlay, display;
-  transition-duration: 0.3s;
-  transition-behavior: allow-discrete;
 }
 
 /* Needs to be included after the previous dialog[open]

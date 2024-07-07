@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/vue3';
 import '@unocss/reset/tailwind.css';
-// import 'uno.css';
-import 'virtual:uno.css';
+// https://storybook.js.org/recipes/tailwindcss
+import '../src/app.css';
 
 const preview: Preview = {
   parameters: {

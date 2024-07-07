@@ -128,13 +128,13 @@ export const Icon: Story = {
         </div>
         <div class="flex gap-8">
           <HBtn variant="flat" icon size="x-small">
-            <IconoirArrowRight />
+            <IconoirArrowRight class="size-3" />
           </HBtn>
           <HBtn variant="text" icon size="x-small">
-            <IconoirArrowRight />
+            <IconoirArrowRight class="size-3" />
           </HBtn>
           <HBtn variant="outlined" icon size="x-small">
-            <IconoirArrowRight />
+            <IconoirArrowRight class="size-3" />
           </HBtn>
         </div>
       </div>

@@ -57,7 +57,7 @@ const classes = computed(() => {
     _classes.push(`!active:bg-pink`, `active:border-pink`, `!active:text-white`, `border-indigo-500`, `hover:decoration-underline`);
     if (props.variant === `flat`) _classes.push(`bg-indigo-500`);
   };
-  if (props.icon) _classes.push(`bg-white`); // additional white background is mandatory for icon buttons
+  if (props.icon && props.variant !== `flat`) _classes.push(`bg-white`); // additional white background is mandatory for icon buttons
 
   // Size
   if (!props.icon) _classes.push(`px-6`, `text-sm`, `h-10`);
@@ -78,7 +78,7 @@ const classes = computed(() => {
   >
     <span
       class="col-start-1 row-start-1 opacity-0 last:opacity-100 inline-flex items-center justify-center gap-1"
-      :class="{ 'has-[svg]:-m-s-4': !icon }"
+      :class="{ 'has-[svg]:-ms-4': !icon }"
     >
       <slot>
         {{ text }}

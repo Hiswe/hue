@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 import { VueRouterAutoImports } from 'unplugin-vue-router';
-import Unocss from 'unocss/vite';
+import tailwindcss from 'tailwindcss';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 
@@ -35,9 +35,7 @@ export default defineConfig({
         VueRouterAutoImports,
       ],
     }),
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss(),
+    tailwindcss(),
     // https://github.com/unplugin/unplugin-icons?tab=readme-ov-file
     Icons(),
   ],

@@ -23,9 +23,9 @@ const modelValue = defineModel<string>();
           group/input
           grid rounded
           before:content-[''] before:pointer-events-none before:rounded-s-lg before:col-start-1 before:row-start-1
-          before:border  before:border-black !before:border-e-0 has-[:focus-within]:before:border-2 has-[:focus-within]:before:border-indigo-500
+          before:border before:border-black before:!border-e-0 has-[:focus-within]:before:border-2 has-[:focus-within]:before:border-indigo-500
           after:content-[''] after:pointer-events-none after:rounded-e-lg after:col-start-3 after:row-start-1
-          after:border  after:border-black !after:border-s-0 has-[:focus-within]:after:border-2 has-[:focus-within]:after:border-indigo-500
+          after:border after:border-black after:!border-s-0 has-[:focus-within]:after:border-2 has-[:focus-within]:after:border-indigo-500
         "
       >
         <!-- TODO: slot inner before -->

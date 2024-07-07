@@ -16,7 +16,7 @@ function onUpdate() {
 <template>
   <label
     class="inline-flex items-center gap-1 rounded border border-neutral-300 ps-1 pe-2 py-1 bg-transparent transition-colors
-    has-[:checked]:bg-indigo-50 has-[:checked]:border-indigo-50 "
+    has-[:checked]:bg-indigo-50 has-[:checked]:border-indigo-200 "
   >
     <input
       type="radio"

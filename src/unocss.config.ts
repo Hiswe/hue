@@ -22,8 +22,18 @@ export default defineConfig({
       include: [
         /\.(vue|html)($|\?)/,
         // include storybook files
-        /\.stories\.ts($|\?)/,
+        /\.stories\.ts$/,
+        `src/**/*.stories.ts`,
       ],
     },
+    inline: [
+      // plain text
+      `<div class="flex flex-col gap-4 gap-8">Some text</div>`,
+      `<div class="flex flex-col gap-8">Some text</div>`,
+    ],
+    filesystem: [`src/**/*.stories.ts`],
+    // extractContent: {
+    //   filesystem: [`**/*.stories.ts`],
+    // },
   },
 });

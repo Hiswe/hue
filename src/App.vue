@@ -39,6 +39,9 @@ const toggleBackground = ref(false);
         <RouterLink class="px-4 py-2" to="/switch">
           switch
         </RouterLink>
+        <RouterLink class="px-4 py-2" to="/table">
+          table
+        </RouterLink>
       </nav>
       <div class="p-8">
         <RouterView />

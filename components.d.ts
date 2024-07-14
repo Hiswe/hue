@@ -17,6 +17,7 @@ declare module 'vue' {
     HRadioGroup: typeof import('./src/components/HRadioGroup.vue')['default']
     HSpinner: typeof import('./src/components/HSpinner.vue')['default']
     HSwitch: typeof import('./src/components/HSwitch.vue')['default']
+    HTable: typeof import('./src/components/HTable.vue')['default']
     HTextInput: typeof import('./src/components/HTextInput.vue')['default']
     IconoirArrowRight: typeof import('~icons/iconoir/arrow-right')['default']
     IconoirCheck: typeof import('~icons/iconoir/check')['default']

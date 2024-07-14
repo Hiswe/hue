@@ -6,7 +6,8 @@
     },
     "types": [
       "bun-types",
-      "vitest"
+      "vitest",
+      "unplugin-vue-router/client"
     ]
   }
 }

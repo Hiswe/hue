@@ -12,10 +12,12 @@
   },
   "scripts": {
     "build": "vite build",
+    "build:storybook": "storybook build",
+    "lint": "eslint .",
     "start": "vite",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@vueuse/core": "^10.11.0",

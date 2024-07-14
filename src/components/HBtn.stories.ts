@@ -28,7 +28,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {},
-  render: args => ({
+  render: (args: any) => ({
     components: { HBtn },
     setup() {
       return { args };
@@ -45,7 +45,7 @@ export const Flat: Story = {
   args: {
     variant: 'flat',
   },
-  render: args => ({
+  render: (args: any) => ({
     components: { HBtn },
     setup() {
       return { args };
@@ -62,7 +62,7 @@ export const Text: Story = {
   args: {
     variant: 'text',
   },
-  render: args => ({
+  render: (args: any) => ({
     components: { HBtn },
     setup() {
       return { args };
@@ -79,7 +79,7 @@ export const IconAndText: Story = {
   args: {
     variant: 'flat',
   },
-  render: args => ({
+  render: (args: any) => ({
     components: { HBtn, IconoirArrowRight },
     setup() {
       return { args };
@@ -97,7 +97,7 @@ export const IconAndText: Story = {
 
 export const Icon: Story = {
   args: { },
-  render: args => ({
+  render: (args: any) => ({
     components: { HBtn, IconoirArrowRight },
     setup() {
       return { args };
@@ -144,7 +144,7 @@ export const Icon: Story = {
 
 export const Disabled: Story = {
   args: { },
-  render: args => ({
+  render: (args: any) => ({
     components: { HBtn, IconoirArrowRight },
     setup() {
       return { args };
@@ -183,7 +183,7 @@ export const Disabled: Story = {
 
 export const Loading: Story = {
   args: { },
-  render: args => ({
+  render: (args: any) => ({
     components: { HBtn, IconoirArrowRight },
     setup() {
       return { args };

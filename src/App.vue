@@ -33,6 +33,9 @@ const toggleBackground = ref(false);
         <RouterLink class="px-4 py-2" to="/menu">
           menu
         </RouterLink>
+        <RouterLink class="px-4 py-2" to="/rating">
+          rating
+        </RouterLink>
         <RouterLink class="px-4 py-2" to="/spinner">
           spinner
         </RouterLink>

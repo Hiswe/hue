@@ -9,6 +9,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router';
 import tailwindcss from 'tailwindcss';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -23,7 +24,10 @@ export default defineConfig({
       resolvers: [
         IconsResolver({
           prefix: false,
-          enabledCollections: [`iconoir`],
+          enabledCollections: [
+            `iconoir`,
+            `h-icon`,
+          ],
         }),
       ],
     }),
@@ -37,7 +41,14 @@ export default defineConfig({
     }),
     tailwindcss(),
     // https://github.com/unplugin/unplugin-icons?tab=readme-ov-file
-    Icons(),
+    Icons({
+      customCollections: {
+        'h-icon': FileSystemIconLoader(
+          `./src/assets/icons`,
+          svg => svg.replace(/^<svg /, `<svg fill="currentColor" `),
+        ),
+      },
+    }),
   ],
   resolve: {
     alias: {

@@ -25,6 +25,7 @@ declare module 'vue-router/auto-routes' {
     '/drawer': RouteRecordInfo<'/drawer', '/drawer', Record<never, never>, Record<never, never>>,
     '/inputs': RouteRecordInfo<'/inputs', '/inputs', Record<never, never>, Record<never, never>>,
     '/menu': RouteRecordInfo<'/menu', '/menu', Record<never, never>, Record<never, never>>,
+    '/rating': RouteRecordInfo<'/rating', '/rating', Record<never, never>, Record<never, never>>,
     '/spinner': RouteRecordInfo<'/spinner', '/spinner', Record<never, never>, Record<never, never>>,
     '/switch': RouteRecordInfo<'/switch', '/switch', Record<never, never>, Record<never, never>>,
     '/table': RouteRecordInfo<'/table', '/table', Record<never, never>, Record<never, never>>,
